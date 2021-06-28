@@ -901,7 +901,7 @@ transform: translateX(0);
 }
 
 .csslider1 > .cs_description > label > .cs_title {
-margin: 0px 0px 50px 120px;
+margin: 0px 10px;
 opacity: 0;
 visibility: hidden;
 z-index: 2;
@@ -1300,7 +1300,7 @@ only screen and (     -o-max-device-pixel-ratio: 2/1)    and (max-width: 480px),
 only screen and (        max-device-pixel-ratio: 2)      and (max-width: 480px),
 only screen and (                max-resolution: 192dpi) and (max-width: 480px),
 only screen and (                max-resolution: 2dppx)  and (max-width: 480px) { 
-.csslider1 > .cs_description,
+ 
 .csslider1 > .cs_bullets {
     display: none;
 }
