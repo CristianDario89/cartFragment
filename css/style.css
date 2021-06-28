@@ -1,0 +1,124 @@
+ *{margin: 0;padding: 0;box-sizing: border-box;}
+ 
+   
+  .header-container{
+    position:fixed;
+    width:100%;
+    top: 0;
+    z-index:100;
+  }
+  
+  .header {
+    z-index: 1;
+    position: relative;
+  }
+  
+  .header .skew:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: visible;
+    width: 50%;
+    height:250px;
+    background: #000000;
+    z-index: -1;
+    -webkit-transform: skewY(3deg);
+    -moz-transform: skewY(3deg);
+    -ms-transform: skewY(3deg);
+    -o-transform: skewY(3deg);
+    transform: skewY(3deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: initial;
+  }
+  
+  .header .skew:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    overflow: visible;
+    width: 50%;
+    height: 250px;
+    background: #000000;
+    z-index: 1;
+    -webkit-transform: skewY(3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+    -o-transform: skewY(-3deg);
+    transform: skewY(-3deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: initial;
+  }
+  
+  .header .skew .header-inner, .footer .skew .footer-inner {
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .logo {
+    margin: 0;
+    display: inline;
+    position: absolute;
+    text-align:center;
+    left: 35%;
+    top:35px;
+    z-index: 100;
+  }
+  
+  .header a, .footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+   
+  .footer {
+    z-index: 1;
+    position: relative;
+  }
+  
+  .footer .skew:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50px;
+    overflow: visible;
+    width: 50%;
+    height:  50px;
+    background: #000000;
+    z-index: -1;
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+    -o-transform: skewY(-3deg);
+    transform: skewY(-3deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: initial;
+  }
+  
+  .footer-inner{
+    background: #000;
+    position: relative;
+    top: 70px;
+  }
+  
+  .footer .skew:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50px;
+    overflow: visible;
+    width: 50%;
+    height:  50px;
+    background: #000000;
+    z-index: 1;
+    -webkit-transform: skewY(3deg);
+    -moz-transform: skewY(3deg);
+    -ms-transform: skewY(3deg);
+    -o-transform: skewY(3deg);
+    transform: skewY(3deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: initial;
+  }
+  /*--------------------------------------*/
+  .title-card-mio{margin-top: 20px;}
