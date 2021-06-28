@@ -20,11 +20,9 @@ text-decoration: none;
 }
 .csslider1 {
 display: inline-block;
-position: relative;
-max-width: 480px;
+position: relative; 
 
-width: 100%;
-margin-top: 10px;
+width: 100%; 
 }
 .csslider1 > .cs_anchor {
 display: none;

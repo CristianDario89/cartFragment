@@ -21,7 +21,7 @@
     overflow: visible;
     width: 50%;
     height:250px;
-    background: #000000;
+    background: rgb(0, 0, 0, 0.7);
     z-index: -1;
     -webkit-transform: skewY(3deg);
     -moz-transform: skewY(3deg);
@@ -40,7 +40,7 @@
     overflow: visible;
     width: 50%;
     height: 250px;
-    background: #000000;
+    background: rgb(0, 0, 0, 0.7);
     z-index: 1;
     -webkit-transform: skewY(3deg);
     -moz-transform: skewY(-3deg);
