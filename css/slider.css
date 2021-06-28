@@ -901,7 +901,7 @@ transform: translateX(0);
 }
 
 .csslider1 > .cs_description > label > .cs_title {
-margin: 0px 10px;
+margin: 0px 0px 50px 120px;
 opacity: 0;
 visibility: hidden;
 z-index: 2;
