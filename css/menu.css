@@ -1,17 +1,6 @@
- .hijoqonda{ 
-     overflow: hidden;height:10px; 
- }
- .hijoqonda span{
-     position:absolute;
-    /* width:20px;height:20px;*/
-     background:  #f7e7ce ;
-     background-size: cover;
-     pointer-events: none;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    animation:animate 4s linear infinite;
+ /*   animation:animate 4s linear infinite;
 
- }
+ 
 
 @keyframes animate{
     0%{ opacity:0.6;
@@ -20,4 +9,4 @@
     100%{ opacity:0;
         transform: translate(-50%, -1000%);
     }
-}
+}*/
