@@ -52,7 +52,7 @@
   }
   
   .header .skew .header-inner, .footer .skew .footer-inner {
-    padding: 20px;
+    padding:10px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -63,7 +63,7 @@
     position: absolute;
     text-align:center;
     left: 35%;
-    top:35px;
+    top:20px;
     z-index: 100;
   }
   
