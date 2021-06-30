@@ -1,6 +1,7 @@
 const cards = document.getElementById('cards');
 const items = document.getElementById('items');
 const footer = document.getElementById('footer');
+const comprar = document.getElementById('comprar');
 
 const templateCard = document.getElementById('template-card').content
 const templateFooter = document.getElementById('template-footer').content
@@ -8,8 +9,7 @@ const templateCarrito = document.getElementById('template-carrito').content
 
 const fragment = document.createDocumentFragment()
 let carrito = {}
-
-
+ 
 // Eventos
 // El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
 document.addEventListener('DOMContentLoaded', e => {
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', e => {
     }
 });
 
+
 cards.addEventListener('click', e => { addCarrito(e)})
 items.addEventListener('click', e => { btnAumentarDisminuir(e) })
 
@@ -30,7 +31,7 @@ const fetchData = async () => {
   try {
     const res = await fetch('db.json');
     const data = await res.json()
-    console.log(data)
+    
     pintarCards(data)
 
   } catch (error) {
@@ -41,7 +42,7 @@ const fetchData = async () => {
 
 // Pintar productos
 const pintarCards = data => {
- console.log(data)
+ 
     data.forEach(producto => {
         templateCard.querySelector('h5').textContent = producto.title
         templateCard.querySelector('p').textContent =  producto.precio
@@ -63,6 +64,7 @@ const addCarrito = e => {
     }
     e.stopPropagation()
 }
+
 
 //Generar OBJETO, SIN NECESIDAD DE RECORRELO, DE HACER PETICIONES A LA BD solo js
 const setCarrito = item => {
@@ -101,6 +103,9 @@ const pintarCarrito = () => {
 
         const clone = templateCarrito.cloneNode(true)
         fragment.appendChild(clone)
+
+        
+    console.log(producto.title)
     })
     items.appendChild(fragment)
  
@@ -169,4 +174,5 @@ const btnAumentarDisminuir = e => {
     }
     e.stopPropagation()
 }  
+ 
  
