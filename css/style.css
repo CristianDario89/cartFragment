@@ -1,9 +1,5 @@
  *{margin: 0;padding: 0;box-sizing: border-box;}
- body{/*background: #DFC2F2;
-	background-image: linear-gradient( to right, #ffffb3,#ffe6e6);
-	background-attachment: fixed;	
-	background-size: cover;*/}
-   
+ 
   .header-container{
     position:fixed;
     width:100%;
@@ -65,8 +61,8 @@
     display: inline;
     position: absolute;
     text-align:center;
-    left: 35%;
-    top:28px;
+    left: 30%;
+    top:30px;
     z-index: 100;
   }
   
