@@ -125,3 +125,5 @@
   }
   /*--------------------------------------*/
   .title-card-mio{margin-top: 20px;}
+
+  .peso::before{content:"$ "}

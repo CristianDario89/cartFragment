@@ -1,39 +1,51 @@
 [
-    {
-    "precio": 500,
-    "id": 1,
-    "title": "Café",
-    "thumbnailUrl": "img/f1.jpg"
-  },
   {
     "precio": 300,
     "id": 2,
-    "title": "Pizza",
-    "thumbnailUrl": "https://picsum.photos/id/10/600"
+    "title": "Tarta de verdura",
+    "thumbnailUrl": "img/444.jpg"
   },
   {
     "precio": 100,
     "id": 3,
-    "title": "Agua",
-    "thumbnailUrl": "https://picsum.photos/id/20/600"
+    "title": "Tarta de J & Q",
+    "thumbnailUrl": "img/55.jpg"
   },
   {
     "precio": 50,
     "id": 4,
-    "title": "Sandía",
-    "thumbnailUrl": "https://picsum.photos/id/30/600"
+    "title": "Emp. de carne",
+    "thumbnailUrl": "img/f11.jpg"
   },
   {
     "precio": 10,
     "id": 5,
-    "title": "Mango",
-    "thumbnailUrl": "https://picsum.photos/id/40/600"
+    "title": "Emp. de J & Q",
+    "thumbnailUrl": "img/f2.jpg"
   },
   {
     "precio": 150,
     "id": 6,
-    "title": "Chela",
-    "thumbnailUrl": "https://picsum.photos/id/50/600"
+    "title": "Emp. de pollo",
+    "thumbnailUrl": "img/3.jpg"
+  }, 
+  {
+    "precio": 500,
+    "id": 1,
+    "title": "Muzza",
+    "thumbnailUrl": "img/f1.jpg"
+  },
+  {
+    "precio": 50,
+    "id": 4,
+    "title": "Morrones",
+    "thumbnailUrl": "img/a1.png"
+  },
+  {
+    "precio": 10,
+    "id": 5,
+    "title": "Pollo con ensalada",
+    "thumbnailUrl": "img/a2.png"
   }
 ]
  

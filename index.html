@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
+ <html lang="es">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrito de compras</title>
+    <title>Comidas YA</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -12,10 +11,10 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="css/style.css"></link>
-  <link rel="stylesheet" href="css/slider.css"></link> 
-  <script src="js/js.js"></script>
-  </head>
-  <body>
+  <link rel="stylesheet" href="css/slider.css"></link>  
+
+</head>
+<body>
 
 <header class="header-container" id="header">
       <div class="header">
@@ -45,7 +44,7 @@
            <a href="#" target=""><img src='img/f1.jpg' alt='Buns' title='Buns' /> </a> 
         </li>
         <li class='num1 img'>
-           <a href="#" target=""><img src='img/f2.webp' alt='Croissant' title='Croissant' /> </a> 
+           <a href="#" target=""><img src='img/f2.jpg' alt='Croissant' title='Croissant' /> </a> 
         </li>
         <li class='num2 img'>
            <a href="#" target=""><img src='img/f11.jpg' alt='Lemon pie' title='Lemon pie' /> </a> 
@@ -57,10 +56,10 @@
           <span class="cs_title"><span class="cs_wrapper">Llega rápido</span></span>
         </label>
         <label class='num1'>
-          <span class="cs_title"><span class="cs_wrapper">menos de 30 min</span></span>
+          <span class="cs_title"><span class="cs_wrapper">Compra sencillo</span></span>
         </label>
         <label class='num2'>
-          <span class="cs_title"><span class="cs_wrapper">Pedi en casa</span></span>
+          <span class="cs_title"><span class="cs_wrapper">Compra en casa</span></span>
         </label>
       </div>
       
@@ -82,7 +81,7 @@
         </label>
         <label class='num1' for='cs_slide1_1'>
           <span class='cs_point'></span>
-          <span class='cs_thumb'><img src='img/f2.webp' alt='Croissant' title='Croissant' /></span>
+          <span class='cs_thumb'><img src='img/f2.jpg' alt='Croissant' title='Croissant' /></span>
         </label>
         <label class='num2' for='cs_slide1_2'>
           <span class='cs_point'></span>
@@ -92,7 +91,7 @@
 </div>
 
 <div class="container">
-      <h4 class="title-card-mio">Cards</h4>
+      <h4 class="title-card-mio">MENÚ</h4>
       <div class="row" id="cards"></div>
 
       <h4>Carrito de compras</h4>
@@ -121,15 +120,18 @@
       <div class="footer">
         <div class="skew">
             <div class="footer-inner">
-              <ul style="display:inline-block;"><li style="display:inline;"><a href="#">link#1</a></li>
+              <ul style="display:inline-block;">     
+                 <!--
+                <li style="display:inline;"><a href="#">link#1</a></li>
                 <li style="display:inline;"><a href="#">link#2</a></li>
                 <li style="display:inline;"><a href="#">link#3</a></li>
                 <li style="display:inline;"><a href="#">link#4</a></li>
+               --> 
               </ul>
             </div>
         </div>
       </div>
-     </footer>
+</footer>
 
 
    <!--TEMPLATES TEMPLATES TEMPLATES TEMPLATES TEMPLATES-->
@@ -164,215 +166,18 @@
     <template id="template-card">
       <div class="col-6 col-lg-3 mb-2">
         <div class="card">
-          <img src="" alt="" class="card-img-top miimg">
-          <div class="card-body">
+          <img src="" alt="" class="card-img-top" style="height:130px;">
+          <div class="card-body text-center">
             <h5>Titulo</h5>
-            <p>precio</p>
+            <p class="peso"> precio</p>
             <button class="btn btn-dark">Comprar</button>
           </div>
         </div>
       </div>
-  
-  
     </template>
-
- 
-<script>
-const cards = document.getElementById('cards')
-const items = document.getElementById('items')
-const footer = document.getElementById('footer')
-
-const templateCard = document.getElementById('template-card').content
-const templateFooter = document.getElementById('template-footer').content
-const templateCarrito = document.getElementById('template-carrito').content
-const fragment = document.createDocumentFragment()
-let carrito = {}
-
-// Eventos
-// El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
-document.addEventListener('DOMContentLoaded', e => {
-    fetchData()
-    //la pregunbta del locals
-    if (localStorage.getItem('carrito')) { //si xiste el carrito decimos q
-        carrito = JSON.parse(localStorage.getItem('carrito')) 
-        pintarCarrito()
-    }
-});
-
-cards.addEventListener('click', e => { addCarrito(e);})
-items.addEventListener('click', e => { btnAumentarDisminuir(e) })
-
-// Traer productos
-const fetchData = async () => {
-  try {
-    const res = await fetch('db.json');
-    const data = await res.json()
-    // console.log(data)
-    pintarCards(data)
-
-  } catch (error) {
-    console.log(error);
-  }
-   
-}
-
-// Pintar productos
-const pintarCards = data => {
-    data.forEach(item => {
-        templateCard.querySelector('h5').textContent = item.title
-        templateCard.querySelector('p').textContent = item.precio
-        templateCard.querySelector('img').setAttribute('src', item.thumbnailUrl)  
-        templateCard.querySelector('button').dataset.id = item.id
-        const clone = templateCard.cloneNode(true)
-        fragment.appendChild(clone)
-    })
-    cards.appendChild(fragment)
-}
-
-
-// Agregar al carrito
-const addCarrito = e => {
-    if (e.target.classList.contains('btn-dark')) {//le mandamos el elemento padre a setCarrito
-        // console.log(e.target.dataset.id)
-        //console.log(e.target.parentElement)
-        setCarrito(e.target.parentElement)
-    }
-    e.stopPropagation()
-}
-
-//Generar OBJETO, SIN NECESIDAD DE RECORRELO, DE HACER PETICIONES A LA BD solo js
-const setCarrito = item => {
-    // console.log(item)
-    //coleccion de nobjetos
-    const producto = {
-        title: item.querySelector('h5').textContent,
-        precio: item.querySelector('p').textContent,
-        id: item.querySelector('button').dataset.id,
-        cantidad: 1
-    }
-    //console.log(producto)
-    if (carrito.hasOwnProperty(producto.id)) {
-        producto.cantidad = carrito[producto.id].cantidad + 1 //carrito[producto.id] = a la coleccion de elem sahora solo accedemos al id
-    }
-
-    //carrito en su propiedad carritoid =indexado = una copia de producto ... , 
-    //accedemos al obj y lo copiamos. Si nmo existe lo crea y sino lo sobreescribe
-    carrito[producto.id] = { ...producto } //una vez empujado este elem al carrito hay q pintarlo
-    
-    pintarCarrito()
-} 
-document.addEventListener('DOMContentLoaded', e => {
-    fetchData()
-     
-});
-
-
-const pintarCarrito = () => {
-    items.innerHTML = ''
-
-    Object.values(carrito).forEach(producto => {
-        templateCarrito.querySelector('th').textContent = producto.id
-        templateCarrito.querySelectorAll('td')[0].textContent = producto.title
-        templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad
-        templateCarrito.querySelector('span').textContent = producto.precio * producto.cantidad
-        
-        //botones
-        templateCarrito.querySelector('.btn-info').dataset.id = producto.id
-        templateCarrito.querySelector('.btn-danger').dataset.id = producto.id
-
-        const clone = templateCarrito.cloneNode(true)
-        fragment.appendChild(clone)
-    })
-    items.appendChild(fragment)
- 
-    pintarFooter()
- //nuestra COLECCIO DE OBJ pasa a STRING PLANO
-    localStorage.setItem('carrito', JSON.stringify(carrito)) 
-}
-
-
-const pintarFooter = () => {
-    footer.innerHTML = ''
-    
-    if (Object.keys(carrito).length === 0) {//si estavacio q pinte esto
-      //como es una sola simple liena usamos inner
-        footer.innerHTML = `
-        <th scope="row" colspan="5">Carrito vacío con innerHTML</th>
-        `
-        return //hacemos q se salga de toda esta funciom 
-    }
-    
-    // sumar cantidad y sumar totales
-    //reduce = 1)toma lgo 2)retorna 3)accedemos a la cant 4)0 xq retorna num
-    const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
-    const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
-    // console.log(nPrecio)
-
-    templateFooter.querySelectorAll('td')[0].textContent = nCantidad
-    templateFooter.querySelector('span').textContent = nPrecio
-
-    const clone = templateFooter.cloneNode(true)
-    fragment.appendChild(clone)
-
-    footer.appendChild(fragment)
- 
-    const boton = document.querySelector('#vaciar-carrito')
-    boton.addEventListener('click', () => {
-        carrito = {}
-        pintarCarrito()
-    })
- 
-}
- 
-const btnAccion = e => { 
-  console.log(e.target)
-}
-
-const btnAumentarDisminuir = e => {
-    // console.log(e.target.classList.contains('btn-info'))
-
-    //en la colleccion d e elem del carro accedemos solo a
-    if (e.target.classList.contains('btn-info')) {
-      //a difertencia del array con find() q recorre TODO EL ARRAY
-        const producto = carrito[e.target.dataset.id]
-        producto.cantidad++
-        carrito[e.target.dataset.id] = { ...producto }
-        pintarCarrito()
-    }
-
-    if (e.target.classList.contains('btn-danger')) {
-        const producto = carrito[e.target.dataset.id]
-        producto.cantidad--
-        if (producto.cantidad === 0) {
-          //eloiminara solo obj d ese indice
-            delete carrito[e.target.dataset.id] //delete = de los objetos belongs
-        } else {
-            carrito[e.target.dataset.id] = {...producto}
-        }
-        pintarCarrito()
-    }
-    e.stopPropagation()
-} 
-</script>  
-<script>
-  document.addEventListener("mousemove", function(e) {
-    var body = document.getElementById('hijoqonda');
-    var bubbles = document.createElement('span');
-    var x = e.offsetX;
-    var y = e.offsetY;
-    bubbles.style.left = x+'px';
-    bubbles.style.top = y+'px';
-
-    var size = Math.random() * 100;
-    bubbles.style.width = 20 + size + 'px';
-    bubbles.style.height =20 + size + 'px';
-
-    body.appendChild(bubbles);
-
-    setTimeout(function(){
-      bubbles.remove();
-    },4000)
-})
-</script>
+    <!--fin fin fin fin TEMPLATES TEMPLATES-->
+    <!--fin fin fin fin TEMPLATES TEMPLATES-->
+  
+    <script src="js/js.js"></script>
   </body>
 </html>
