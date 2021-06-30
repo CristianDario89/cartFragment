@@ -131,19 +131,6 @@
 .mitext { 
   position: relative;z-index: 1111;   
   font-family: "Pacifico", cursive; 
-  color: yellow;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
+  color: yellow; 
 }
-
-@keyframes glow {
-  from {
-    text-shadow: 
-      0 0 40px #e5ca00, 0 0 50px #e5ca00, 0 0 60px #e5ca00, 0 65px #e5ca00;
-  }
-  to {
-    text-shadow: 0 0 40px #fff30f,
-      0 0 50px #fff30f, 0 0 60px #fff30f, 0 0 70px #fff30f, 0 0 75px #fff30f;
-  }
-}
+ 
