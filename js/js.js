@@ -1,4 +1,4 @@
- const cards = document.getElementById('cards');
+const cards = document.getElementById('cards');
 const items = document.getElementById('items');
 const footer = document.getElementById('footer');
 
@@ -9,6 +9,7 @@ const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment()
 let carrito = {}
 
+
 // Eventos
 // El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
 document.addEventListener('DOMContentLoaded', e => {
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', e => {
     if (localStorage.getItem('carrito')) { //si xiste el carrito decimos q
         carrito = JSON.parse(localStorage.getItem('carrito')) 
         pintarCarrito()
+         
     }
 });
 
@@ -35,7 +37,8 @@ const fetchData = async () => {
     console.log(error);
   }
    
-} 
+}  
+
 // Pintar productos
 const pintarCards = data => {
  console.log(data)
@@ -113,7 +116,7 @@ const pintarFooter = () => {
     if (Object.keys(carrito).length === 0) {//si estavacio q pinte esto
       //como es una sola simple liena usamos inner
         footer.innerHTML = `
-        <th scope="row" colspan="5">Carrito vacío con innerHTML</th>
+        <th scope="row" colspan="5">Carrito vacío</th>
         `
         return //hacemos q se salga de toda esta funciom 
     }

@@ -127,3 +127,5 @@
   .title-card-mio{margin-top: 20px;}
 
   .peso::before{content:"$ "}
+
+  .card{transform:scaleY(0.9)}
