@@ -8,7 +8,7 @@
   var _w = window,
     _b = document.body,
     _d = document.documentElement
-
+//TODO hacer 
   // random helper
   var random = function() {
     if (arguments.length === 1) {
